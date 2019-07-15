@@ -55,16 +55,15 @@ public class ShoppingCart {
 
 	}
 
-
+        //add item into cart
 	public static void add(List<Item> itemList, List<Item> cartList){
-		//add item into cart
-		System.out.print("\nïtem name : ");
+		System.out.print("\nÃ¯tem name : ");
 		Scanner scanner=new Scanner(System.in);
 		String itemName=scanner.nextLine();
 		double itemPrice=0;
 		int i=0;
+		//check item validation
 		for(i=0;i<itemList.size();i++){
-			//check item validation
 			if(itemName.equals(itemList.get(i).getItemName())){
 				itemPrice=itemList.get(i).getItemPrice();
 				break;
@@ -81,24 +80,22 @@ public class ShoppingCart {
 		}else
 			System.out.println("invalid item name");
 	}
-
+        //show items in cart
 	private static void showCart(List<Item> cartList) {
-		//show items in cart
 		System.out.println("\nSr No\tItem Name\tItem Price\tQuantity\n");
 		for(int i=0;i<cartList.size();i++){
 			System.out.println(i+1+"\t"+cartList.get(i).getItemName()+"\t\t"+cartList.get(i).getItemPrice()+"\t\t"+cartList.get(i).getItemQuantity());
 		}
 	}
-
+        //update quantity of item
 	private static void update(List<Item> cartList) {
-		//update quantity of item
 		if(cartList.size()!=0){
-			System.out.print("\nïtem name : ");
+			System.out.print("\nÃ¯tem name : ");
 			Scanner scanner=new Scanner(System.in);
 			String itemName=scanner.nextLine();
 			int i=0;
+			//check item is in cart or not
 			for(i=0;i<cartList.size();i++){
-				//check item is in cart or not
 				if(itemName.equals(cartList.get(i).getItemName()))
 					break;	
 			}
@@ -116,9 +113,8 @@ public class ShoppingCart {
 			System.out.println("cart is empty");
 	}
 
-
+        //generate bill for total purchase
 	private static void generateBill(List<Item> cartList) {
-		//generate bill for total purchase
 		System.out.println("\nSr No\tItem Name\tItem Price\tQuantity\tAmount\n");
 		double total=0;
 		for(int i=0;i<cartList.size();i++){
