@@ -45,17 +45,15 @@ public class JobScheduler {
 			System.out.println("please enter a valid number");
 		}
 	}
-
+        // calculate turn around time of each process
 	private static int[] turnAroundTime(int[][] process,int[] completionTimeList) {
-		// calculate turn around time of each process
 		int[] turnATimeList = new int[completionTimeList.length];
 		for (int i = 0; i < turnATimeList.length; i++)
 			turnATimeList[i] = completionTimeList[i] - process[i][0];
 		return turnATimeList;
 	}
-
+        // calculate completion time of each process
 	private static int[] completionTime(int[][] process, int noOfProcess) {
-		// calculate completion time of each process
 		int[] compTimeList = new int[noOfProcess];
 		compTimeList[0] = process[0][0] + process[0][1];
 		for (int i = 1; i < noOfProcess; i++) {
@@ -66,9 +64,8 @@ public class JobScheduler {
 		}
 		return compTimeList;
 	}
-
+        // calculate waiting time of each process
 	private static int[] waitingTime(int[][] process, int noOfProcess) {
-		// calculate waiting time of each process
 		int[] waitTimeList = new int[noOfProcess];
 		waitTimeList[0] = 0;
 		for (int i = 1; i < noOfProcess; i++) {
