@@ -5,9 +5,7 @@ public class HexCalc {
 	 * HexCalc calculate two hexadecimal numbers convert hexadecimal to decimal
 	 * convert decimal to hexadecimal
 	 */
-
 	public static void main(String[] args) {
-		// task for two hexadecimal numbers
 		Scanner scanner = new Scanner(System.in);
 		System.out.println("first hexadecimal : ");
 		String firstHexNum = scanner.nextLine();
@@ -22,8 +20,8 @@ public class HexCalc {
 				} catch (Exception e) {
 					System.out.println("invalid action");
 				}
-				switch (task) {
 				// task for hexadecimal numbers
+				switch (task) {
 				case 1:
 
 					System.out.println(add(firstHexNum, secondHexNum));
@@ -47,10 +45,8 @@ public class HexCalc {
 		} else
 			System.out.println("invalid hexadecimal numbers");
 	}
-
+        // compare two hexadecimal numbers
 	private static String compare(String firstHexNum, String secondHexNum) {
-		// compare two hexadecimal numbers
-		
 		if (isValidHex(firstHexNum) && isValidHex(secondHexNum)) {
 			firstHexNum=removeZero(firstHexNum);
 			secondHexNum=removeZero(secondHexNum);
@@ -74,38 +70,32 @@ public class HexCalc {
 		}else
 			return "invalid hexadecimal numbers";
 	}
-
+        //remove intial zeros in hexadecimal number
 	private static String removeZero(String hexNum) {
-		
 		StringBuilder newHex=new StringBuilder();
 		int i;
 		for(i=0;i<hexNum.length();i++){
-			if(hexNum.charAt(i)=='0')
-				continue;
-			else
-				break;
+			if(hexNum.charAt(i)!='0')
+			  break;
 		}
 		for(int j=i;j<hexNum.length();j++)
 			newHex.append(hexNum.charAt(j));
 		return (newHex.toString());
 	}
-
+        // divide two hexadecimal numbers
 	private static String divide(String firstHexNum, String secondHexNum) {
-		// divide two hexadecimal numbers
 		long firstNum = hexToDecimal(firstHexNum);
 		long secondNum = hexToDecimal(secondHexNum);
 		return decimalToHex(firstNum / secondNum);
 	}
-
+        // multiple two hexadecimal numbers
 	private static String multiple(String firstHexNum, String secondHexNum) {
-		// multiple two hexadecimal numbers
 		long firstNum = (long)hexToDecimal(firstHexNum);
 		long secondNum = (long)hexToDecimal(secondHexNum);
 		return decimalToHex((long) firstNum * secondNum);
 	}
-
+        // subtract two hexadecimal numbers
 	private static String subtract(String firstHexNum, String secondHexNum) {
-		// subtract two hexadecimal numbers
 		long firstNum = hexToDecimal(firstHexNum);
 		long secondNum = hexToDecimal(secondHexNum);
 		if (firstNum > secondNum)
@@ -113,16 +103,14 @@ public class HexCalc {
 		else
 			return "first number should be greater than second number";
 	}
-
+        // add two hexadecimal numbers
 	private static String add(String firstHexNum, String secondHexNum) {
-		// add two hexadecimal numbers
 		long firstNum = hexToDecimal(firstHexNum);
 		long secondNum = hexToDecimal(secondHexNum);
 		return decimalToHex(firstNum + secondNum);
 	}
-
+        // convert hexadecimal to decimal
 	public static long hexToDecimal(String hexNum) {
-		// convert hexadecimal to decimal
 		String digits = "0123456789ABCDEF";
 		hexNum = hexNum.toUpperCase();
 		int val = 0;
@@ -133,9 +121,8 @@ public class HexCalc {
 		}
 		return val;
 	}
-
+        // covert decimal to hexadecimal
 	public static String decimalToHex(long decimalNum) {
-		// covert decimal to hexadecimal
 		int rem;
 		String hex = "";
 		char hexchars[] = { '0', '1', '2', '3', '4', '5', '6', '7', '8', '9','A', 'B', 'C', 'D', 'E', 'F' };
@@ -148,9 +135,8 @@ public class HexCalc {
 		}
 		return hex;
 	}
-
+        // check valid hexadecimal number or not
 	public static boolean isValidHex(String hexNum) {
-		// check valid hexadecimal number or not
 		hexNum = hexNum.toUpperCase();
 		for (int i = 0; i < hexNum.length(); i++) {
 			char c = hexNum.charAt(i);
