@@ -1,7 +1,6 @@
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class ArrOperation {
 
 	/**
@@ -138,5 +137,3 @@ public class ArrOperation {
 			throw new AssertionError("Array is empty");
 	}
 }
-
-
