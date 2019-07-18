@@ -1,8 +1,8 @@
 
 public class Item {
-	String itemName;
-	double itemPrice;
-	int itemQuantity,serialNo;
+	private aString itemName;
+	private double itemPrice;
+	private int itemQuantity,serialNo;
 	public Item(String itemName, double itemPrice, int itemQuantity,int serialNo) {
 		super();
 		this.itemName = itemName;
