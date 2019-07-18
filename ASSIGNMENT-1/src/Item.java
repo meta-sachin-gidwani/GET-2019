@@ -1,6 +1,6 @@
 
 public class Item {
-	private aString itemName;
+	private String itemName;
 	private double itemPrice;
 	private int itemQuantity,serialNo;
 	public Item(String itemName, double itemPrice, int itemQuantity,int serialNo) {
