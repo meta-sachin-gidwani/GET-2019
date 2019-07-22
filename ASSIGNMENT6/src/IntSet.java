@@ -37,7 +37,6 @@ public final class IntSet {
 	 * @return true if s is a subset of the set else false
 	 */
 	public boolean isSubSet(IntSet s) {
-
 		if (s.size() <= array.length) {
 			// check size of subset
 			int i, j;
@@ -53,7 +52,6 @@ public final class IntSet {
 					return false;
 			}
 			return true;
-
 		} else
 			return false;
 	}
