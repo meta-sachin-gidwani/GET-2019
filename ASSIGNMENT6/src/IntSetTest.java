@@ -32,11 +32,11 @@ public class IntSetTest {
 		assertArrayEquals(
 				new IntSet(new int[] { 1, 2, 3, 4 }).getArray(),
 				IntSet.union(new IntSet(new int[] { 1, 2, 3 }),
-						new IntSet(new int[] { 2, 4 })).getArray());
+				new IntSet(new int[] { 2, 4 })).getArray());
 		assertArrayEquals(
 				new IntSet(new int[] { 5, 8, 10, 15 }).getArray(),
 				IntSet.union(new IntSet(new int[] { 5, 8, 10 }),
-						new IntSet(new int[] { 8, 15 })).getArray());
+				new IntSet(new int[] { 8, 15 })).getArray());
 		assertArrayEquals(
 				new IntSet(new int[] { 2, 9, 21, 22, 56 }).getArray(),
 				IntSet.union(new IntSet(new int[] { 2, 9, 21 }),
@@ -44,7 +44,7 @@ public class IntSetTest {
 		assertArrayEquals(
 				new IntSet(new int[] { 4, 7, 10, 15, 18, 30 }).getArray(),
 				IntSet.union(new IntSet(new int[] { 4, 7, 10 }),
-						new IntSet(new int[] { 15, 18, 30 })).getArray());
+				new IntSet(new int[] { 15, 18, 30 })).getArray());
 	}
 
 }
