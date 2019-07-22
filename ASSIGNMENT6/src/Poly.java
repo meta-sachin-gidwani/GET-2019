@@ -3,7 +3,6 @@ public final class Poly {
 	// immutable array
 	private final int[] array;
 
-	// constructor
 	public Poly(int[] array) {
 		this.array = array;
 	}
@@ -77,23 +76,28 @@ public final class Poly {
 		// length of multiple array
 		int lenOfArr = degreeOfP1 + degreeOfP2 + 1;
 		int[] multipleArray = new int[lenOfArr];
-		if (degreeOfP1 > degreeOfP2) {
+		if (degreeOfP1 > degreeOfP2) 
 			// if degree of p1 is greater
-			for (int i = 0; i <= degreeOfP1; i++) {
-				for (int j = 0; j <= degreeOfP2; j++)
-					// multiple coefficient
-					multipleArray[(i + j)] = (multipleArray[(i + j)] + (arrayOfP1[i] * arrayOfP2[j]));
-			}
-		} else {
-			for (int i = 0; i <= degreeOfP2; i++) {
-				// if degree of p2 is greater
-				for (int j = 0; j <= degreeOfP1; j++)
-					// multiple coefficient
-					multipleArray[(i + j)] = (multipleArray[(i + j)] + (arrayOfP1[i] * arrayOfP2[j]));
-			}
-		}
+			multiple(degreeOfP1,degreeOfP2,multipleArray,arrayOfP1,arrayOfP2);
+		else
+			multiple(degreeOfP2,degreeOfP1,multipleArray,arrayOfP2,arrayOfP1);
 		return new Poly(multipleArray);
 
+	}
+	
+	/**
+	 * @param bigDegree larger degree
+	 * @param smallDegree smaller degree
+	 * @param multipleArray result array of multiple
+	 * @param array1 of larger degree
+	 * @param array2 of smaller degree
+	 */
+	private static void multiple(int bigDegree, int smallDegree, int[] multipleArray, int[] array1,int[] array2 ){
+		for (int i = 0; i <= bigDegree; i++) {
+			for (int j = 0; j <= smallDegree; j++)
+				// multiple coefficient
+				multipleArray[(i + j)] = (multipleArray[(i + j)] + (array1[i] * array2[j]));
+		}
 	}
 
 }
