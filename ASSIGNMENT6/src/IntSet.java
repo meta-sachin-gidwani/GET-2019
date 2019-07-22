@@ -2,7 +2,6 @@ public final class IntSet {
 	// immutable array
 	private final int[] array;
 
-	// constructor
 	public IntSet(int[] array) {
 		this.array = array;
 	}
