@@ -72,16 +72,16 @@ public final class SparseMatrix {
 	 * @return true if matrix is symmetrical else false
 	 */
 	public boolean isSymmetrical() {
-	    //check for symmetrical
+		// check for symmetrical
 		int i, j;
-		SparseMatrix sp=new SparseMatrix(transpose());
-		int[][] transMatrix =sp.getMatrix();
+		SparseMatrix sp = new SparseMatrix(transpose());
+		int[][] transMatrix = sp.getMatrix();
 		if (matrix.length == transMatrix.length) {
 			for (i = 0; i < matrix.length; i++) {
 				for (j = 0; j < transMatrix.length; j++) {
 					if (matrix[i][0] == transMatrix[j][0] && matrix[i][1] == transMatrix[j][1] && matrix[i][2] == transMatrix[j][2]) {
-						//check element of sparse matrix
-					    break;
+						// check element of sparse matrix
+						break;
 					}
 				}
 				if (j >= transMatrix.length)
@@ -150,34 +150,34 @@ public final class SparseMatrix {
 	 * @param sp sparse matrix
 	 * @return multiply of matrix of sp with class matrix
 	 */
-	public int[][] multiplyMatrix(SparseMatrix sp){
-		if(colSize == sp.getRowSize()){
-		    //check condition of multiplication of matrix
-			int[][] result=new int[rowSize][sp.getColSize()];
-			int[][] matrix2=new SparseMatrix(sp.transpose()).getMatrix();
-			for(int i = 0;i<matrix.length;i++){
-				for(int j =0;j<matrix2.length;j++){
-					if(matrix[i][1]==matrix2[j][1] )
-					    //multiply elements of matrix
-						result[matrix[i][0]][matrix2[j][0]]+=matrix[i][2]*matrix2[j][2];
+	public int[][] multiplyMatrix(SparseMatrix sp) {
+		if (colSize == sp.getRowSize()) {
+			// check condition of multiplication of matrix
+			int[][] result = new int[rowSize][sp.getColSize()];
+			int[][] matrix2 = new SparseMatrix(sp.transpose()).getMatrix();
+			for (int i = 0; i < matrix.length; i++) {
+				for (int j = 0; j < matrix2.length; j++) {
+					if (matrix[i][1] == matrix2[j][1])
+						// multiply elements of matrix
+						result[matrix[i][0]][matrix2[j][0]] += (matrix[i][2] * matrix2[j][2]);
 				}
 			}
 			return result;
-		}else
-			throw new AssertionError("multiply conditio not satisfied");
+		} else
+			throw new AssertionError("multiply condition not satisfied");
 	}
-	
+
 	/**
 	 * @param sparseMatrix
 	 * @param row
 	 * @param col
 	 * @return matrix of sparse matrix
 	 */
-	public int[][] convertInMatrix(int[][] sparseMatrix,int row,int col){
-	    //convert sparse matrix to matrix
-		int[][] result=new int[row][col];
-		for(int i = 0;i<sparseMatrix.length;i++){
-			result[sparseMatrix[i][0]][sparseMatrix[i][1]]=sparseMatrix[i][2];	
+	public int[][] convertInMatrix(int[][] sparseMatrix, int row, int col) {
+		// convert sparse matrix to matrix
+		int[][] result = new int[row][col];
+		for (int i = 0; i < sparseMatrix.length; i++) {
+			result[sparseMatrix[i][0]][sparseMatrix[i][1]] = sparseMatrix[i][2];
 		}
 		return result;
 	}
