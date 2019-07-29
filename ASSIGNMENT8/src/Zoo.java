@@ -4,40 +4,44 @@ import java.util.List;
 import java.util.Map;
 
 public class Zoo {
-	
+
 	// number of zones in zoo = 10;
 	private final int zooCapacity = 3;
 	// list of zones in zoo
-	private List<Zone> zone = new ArrayList<Zone>();
+	List<Zone> zone = new ArrayList<Zone>();
 	// id should be allocated automatically to new animal so it is made static
 	private static int id = 0;
+	//storing capacity of cage using Hashmaps
+	Map<String, Integer> capacityOfCage = new HashMap<String, Integer>();
+	//storing capacity of Zone using Hashmaps
+	Map<String, Integer> capacityOfZone = new HashMap<String, Integer>();
+
+	public Zoo() {
+		capacityOfCage.put("Lion", 1);
+		capacityOfCage.put("Deer", 6);
+		capacityOfCage.put("Snake", 10);
+		capacityOfCage.put("Turtle", 10);
+		capacityOfCage.put("Eagle", 3);
+		capacityOfCage.put("Parrot", 12);
+		capacityOfZone.put("Mammal", 1);
+		capacityOfZone.put("Reptile", 1);
+		capacityOfZone.put("Bird", 1);
+	}
 
 	/**
 	 * @param type: type of animal that can be put in that cage 
 	 * @return capacity of animal in that cage
 	 */
 	public int getCapacityOfCage(String type) {
-		//storing capacity using Hashmaps
-		Map<String, Integer> capacity = new HashMap<String, Integer>();
-		capacity.put("Lion", 4);
-		capacity.put("Deer", 6);
-		capacity.put("Snake", 10);
-		capacity.put("Turtle", 10);
-		capacity.put("Eagle", 3);
-		capacity.put("Parrot", 12);
-		return capacity.get(type);
+		return capacityOfCage.get(type);
 	}
-	
+
 	/**
 	 * @param category: type of category 
 	 * @return number of zones allocated to specific category
 	 */
-	public int getCapacityOfZone(String category) {
-		Map<String, Integer> capacity = new HashMap<String, Integer>();
-		capacity.put("Mammal", 1);
-		capacity.put("Reptile", 1);
-		capacity.put("Bird", 1);
-		return capacity.get(category);
+	public int getCapacityOfZone(String category) {	
+		return capacityOfZone.get(category);
 	}
 
 	/**
@@ -71,7 +75,7 @@ public class Zoo {
 		}
 		return category;
 	}
-	
+
 	/**
 	 * @param category : category of zone
 	 * @param limitOfCages : number of cages allowed in that zone
@@ -80,30 +84,6 @@ public class Zoo {
 	public int addZone(String category) {
 		zone.add(new Zone(category, getCapacityOfZone(category) ));
 		return zone.size() - 1;
-	}
-	
-	/**
-	 * @param typeOfAnimal
-	 * @return function add cages to the cage list and returns true if cage is added else throws assertion error
-	 */
-	public boolean addCage(String typeOfAnimal) {
-		//check in zone list
-		for (int i = 0; i < zone.size(); i++) {
-			//check if zone exist for the particular type of animal
-			if (getCategory(typeOfAnimal).equals(zone.get(i).getCategory())) {
-				//if number of cages in that zone is less than limit of cages in that zone
-				if (zone.get(i).cageList.size() < zone.get(i).getLimitOfCages()){
-					//add cage
-					zone.get(i).cageList.add(new Cage(typeOfAnimal, getCapacityOfCage(typeOfAnimal)));
-					return true;
-				}
-				// zone has cages equal to it's limit so throw assertion error
-				else
-					throw new AssertionError("Zone is full");
-			}
-		}
-		//zone does not exist for that animal category
-		return false;
 	}
 
 	/**
@@ -116,33 +96,32 @@ public class Zoo {
 	public boolean addAnimal( String name, String type, double weight, int age) {
 		//get indexes of the zone and cage available
 		int[] indexes = indexForAnimal(type);
-		List<Animal> animal = zone.get(indexes[0]).cageList.get(indexes[1]).animal;
 		//add animal on the basis of it's type
 		switch (type) {
 			case "Lion" :
-				animal.add(new Lion(name, type, weight, age, ++id));
+				zone.get(indexes[0]).cageList.get(indexes[1]).animal.add(new Lion(name, type, weight, age, ++id));
 				break;
 			case "Deer" :
-				animal.add(new Deer(name, type, weight, age, ++id));
+				zone.get(indexes[0]).cageList.get(indexes[1]).animal.add(new Deer(name, type, weight, age, ++id));
 				break;
 			case "Snake" :
-				animal.add(new Snake(name, type, weight, age, ++id));
+				zone.get(indexes[0]).cageList.get(indexes[1]).animal.add(new Snake(name, type, weight, age, ++id));
 				break;
 			case "Turtle" :
-				animal.add(new Turtle(name, type, weight, age, ++id));
+				zone.get(indexes[0]).cageList.get(indexes[1]).animal.add(new Turtle(name, type, weight, age, ++id));
 				break;
 			case "Eagle" :
-				animal.add(new Eagle(name, type, weight, age, ++id));
+				zone.get(indexes[0]).cageList.get(indexes[1]).animal.add(new Eagle(name, type, weight, age, ++id));
 				break;
 			case "Parrot" :
-				animal.add(new Parrot(name, type, weight, age, ++id));
+				zone.get(indexes[0]).cageList.get(indexes[1]).animal.add(new Parrot(name, type, weight, age, ++id));
 				break;
 			default :
 				break;
 		}
 		return true;
 	}
-	
+
 	/**
 	 * @param type
 	 * @return index of zone
@@ -161,8 +140,7 @@ public class Zoo {
 					//if number of animals in that cage are less than the limit
 					if (zone.get(i).cageList.get(cageIndex).animal.size() < zone.get(i).cageList.get(cageIndex).getCapacity())
 						//return index of zone
-						return i;
-					
+						return i;		
 				}
 				// zone has cages less than limit of cages in that zone
 				else if (zone.get(i).cageList.size() < zone.get(i).getLimitOfCages())
@@ -172,11 +150,11 @@ public class Zoo {
 		//if zone does not exist and number of zones are less than zoo capacity then add zone
 		if (zone.size() < zooCapacity)
 			return addZone(category);
-		//zone cant be added
+		//zone can not be added
 		else
-			throw new AssertionError("Zone is full");
+			throw new AssertionError("Zoo is full");
 	}
-	
+
 	/**
 	 * @param type
 	 * @return index of zone and cage
@@ -200,7 +178,7 @@ public class Zoo {
 			return indexes;
 		}
 	}
-	
+
 	/**
 	 * @param name
 	 * @param type
@@ -236,5 +214,3 @@ public class Zoo {
 	}
 
 }
-
-
