@@ -33,7 +33,7 @@ public class LinkedList {
 	public static LinkedList rotate(LinkedList list, int L, int R, int N) {
 		if (L < R) {
 			if(N == (R-L+1) || N == 0)
-					return list;
+				return list;
 			if ((R - N) >= L) {
 				// get previous of starting node of subList
 				Node previousOfLNode = list.head;
@@ -75,4 +75,3 @@ public class LinkedList {
 		}
 	}
 }
-
