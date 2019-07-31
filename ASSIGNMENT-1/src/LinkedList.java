@@ -54,7 +54,7 @@ public class LinkedList {
 				return list;
 			}
 			else {
-				N = N - (R - L + 1);
+				N = Math.abs(N - (R - L + 1));
 				return rotate(list, L, R, N);
 			}
 		} else
