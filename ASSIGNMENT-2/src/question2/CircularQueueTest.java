@@ -16,6 +16,7 @@ public class QueueTest {
 		queue.enqueue(6);
 		assertTrue(queue.isQueueFull());
 		queue.dequeue();
+		queue.enqueue(3);
 		queue.dequeue();
 		queue.print();
 		assertFalse(queue.isQueueFull());
