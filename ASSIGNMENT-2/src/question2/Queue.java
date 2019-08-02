@@ -3,9 +3,13 @@ public class Queue {
 
 	private static int front, rear;
 	private static int queue[];
+	private int capacity;
+	private static int currentSize;
 
 	public Queue(int capacity) {
 		front = rear = -1;
+		currentSize = 0;
+		this.capacity = capacity;
 		queue = new int[capacity];
 	}
 
@@ -15,8 +19,9 @@ public class Queue {
 	public void enqueue(int data) {
 		// check queue is full or not
 		if (!isQueueFull()) {
-			rear++;
+			rear = (rear + 1) % capacity;
 			queue[rear] = data;
+			currentSize++;
 			if (front == -1)
 				front = rear;
 		} else
@@ -29,11 +34,8 @@ public class Queue {
 	public void dequeue() {
 		// if queue is empty
 		if (!isQueueEmpty()) {
-			front++;
-			if (front > rear) {
-				front = -1;
-				rear = -1;
-			}
+			front = (front + 1) % capacity;
+			currentSize--;
 		} else
 			throw new AssertionError("Queue is Empty");
 	}
@@ -42,7 +44,7 @@ public class Queue {
 	 * @return true if queue is full else false
 	 */
 	public boolean isQueueFull() {
-		if ((rear + 1) == queue.length && front == 0)
+		if (currentSize == capacity)
 			return true;
 		return false;
 	}
@@ -51,13 +53,14 @@ public class Queue {
 	 * @return true if queue is empty else false
 	 */
 	public boolean isQueueEmpty() {
-		if (rear == -1)
+		if (currentSize == 0)
 			return true;
 		return false;
 	}
-	
+
 	public void print(){
 		for(int i=front;i<rear+1;i++)
 			System.out.println(queue[i]);
 	}
 }
+
