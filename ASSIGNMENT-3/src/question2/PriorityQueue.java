@@ -4,7 +4,7 @@ public class PriorityQueue implements PriorityQueueInterface {
 
 	private static int front, rear;
 	private static Item queue[];
-	int capacity;
+	private int capacity;
 
 	public PriorityQueue(int capacity) {
 		this.capacity = capacity;
