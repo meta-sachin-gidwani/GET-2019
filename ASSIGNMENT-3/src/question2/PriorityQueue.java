@@ -2,8 +2,8 @@ package question2;
 
 public class PriorityQueue implements PriorityQueueInterface {
 
-	private static int front, rear;
-	private static Item queue[];
+	private int front, rear;
+	private Item queue[];
 	private int capacity;
 
 	public PriorityQueue(int capacity) {
