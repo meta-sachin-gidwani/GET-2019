@@ -3,9 +3,9 @@ package question3;
 public class Cricket {
 
 	// bowlers in match
-	Bowler[] bowlers;
-	int noOfbowlers, totalBalls;
-	MaxHeap heap;
+	private Bowler[] bowlers;
+	private int noOfbowlers, totalBalls;
+	private MaxHeap heap;
 
 	public Cricket(int noOfbowlers, int totalBalls, int[] quotaOfBowler) {
 		this.noOfbowlers = noOfbowlers;
