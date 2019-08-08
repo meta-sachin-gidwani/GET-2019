@@ -17,33 +17,37 @@ public class Dictionary implements DictionaryInterface{
 				Set<String> keys = rootJSON.keySet();
 				for (String i : keys) {
 					DataEntry dataEntry = new DataEntry(Integer.parseInt(i), rootJSON.get(i).toString());
-					tree.insert(dataEntry);
+					tree.root = tree.insertData(tree.root, dataEntry);
 				}
 			} 
 			catch (Exception ex) {
 				throw new AssertionError("file not found");
 			}
 		}
+		
 	@Override
 	public void addData(int key,String value) {
 		DataEntry dataEntry = new DataEntry(key, value);
-		tree.insert(dataEntry);
+		tree.root = tree.insertData(tree.root, dataEntry);
 	}
+	
 	@Override
 	public void removeData(int key) {
-		tree.deleteKey(key);
+		tree.deleteEntry(tree.root, key);
 	}
+	
 	@Override
 	public String getValue(int key) {
 		return tree.searchKey(tree.root, key);
 	}
+	
 	@Override
 	public List<DataEntry> getSortedList() {
-		return tree.sortDictionary();
+		return tree.sortDictionary(tree.root);
 	}
 
 	@Override
 	public  List<DataEntry> getSubSortedList(int k1, int k2){
-		return tree.sortSubDictionary(k1, k2);
+		return tree.sortSubDictionary(tree.root, k1, k2);
 	}
 }
