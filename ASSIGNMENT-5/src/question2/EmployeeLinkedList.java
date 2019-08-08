@@ -8,7 +8,7 @@ public class EmployeeLinkedList {
 	public EmployeeLinkedList() {
 		this.last = null;
 	}
-	
+
 	/**
 	 * @param employee inserted in linkedList
 	 */
@@ -26,6 +26,7 @@ public class EmployeeLinkedList {
 		}
 		size++;
 	}
+
 	/**
 	 * method to print list
 	 */
@@ -36,6 +37,4 @@ public class EmployeeLinkedList {
 			curr = curr.next;
 		}
 	}
-	
-	
 }
