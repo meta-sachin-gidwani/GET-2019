@@ -8,13 +8,16 @@ public class Node{
 		this.entry = dataEntry;
 		this.lChild = null;
 		this.rChild = null;
-	}	
+	}
+	
 	public void setEntry(DataEntry entry) {
 		this.entry = entry;
 	}
+	
 	public void setlChild(Node lChild) {
 		this.lChild = lChild;
 	}
+	
 	public void setrChild(Node rChild) {
 		this.rChild = rChild;
 	}
@@ -22,12 +25,15 @@ public class Node{
     public DataEntry getEntry() {
 		return entry;
 	}
+    
     public Node getlChild() {
 		return lChild;
 	}
+    
     public Node getrChild() {
 		return rChild;
 	}
-
 }
+
+
 
