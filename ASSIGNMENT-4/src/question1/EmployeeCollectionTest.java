@@ -1,11 +1,5 @@
 package question1;
 
-import static org.junit.Assert.*;
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.LinkedList;
-import java.util.List;
-
 import org.junit.Test;
 
 public class EmployeeCollectionTest {
@@ -19,10 +13,7 @@ public class EmployeeCollectionTest {
 		collection.addEmployee(4, "vaibhav", "SDC");
 		collection.addEmployee(5, "sachin", "SDSC");
 		collection.addEmployee(2, "mini", "qwe");
-		List<Employee> peopleList = new ArrayList<Employee>();
-		peopleList.addAll(collection.set);
-		Collections.sort(peopleList, new SortByName());
-		for (Employee emp : peopleList) {
+		for (Employee emp : collection.sortByName()) {
 			System.out.println(emp);
 		}
 		System.out.println();
@@ -37,12 +28,10 @@ public class EmployeeCollectionTest {
 		collection.addEmployee(4, "sachin", "SDC");
 		collection.addEmployee(5, "sachin", "SDSC");
 		collection.addEmployee(2, "mini", "qwe");
-		List<Employee> peopleList = new LinkedList<Employee>();
-		peopleList.addAll(collection.set);
-		Collections.sort(peopleList, new SortById());
-		for (Employee emp : peopleList) {
+		for (Employee emp : collection.sortById()) {
 			System.out.println(emp);
 		}
+		System.out.println();
 	}
 
 }
