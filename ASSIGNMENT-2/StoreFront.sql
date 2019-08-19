@@ -74,7 +74,7 @@ CREATE TABLE items_ordered(
     total_amount DOUBLE,
     FOREIGN KEY (shopper_id)
         REFERENCES Shopper (shopper_id),
-    CONSTRAINT product_id FOREIGN KEY (product_id)
+    CONSTRAINT product_id2 FOREIGN KEY (product_id)
         REFERENCES Product (product_id)
 );
           
