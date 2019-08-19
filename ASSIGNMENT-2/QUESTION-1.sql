@@ -32,6 +32,5 @@ CREATE TABLE Product(
  ALTER TABLE stock
    ADD CONSTRAINT Product_Id1 FOREIGN KEY ( product_Id) REFERENCES Product( product_Id);
 
-
 ALTER TABLE items_ordered ADD CONSTRAINT product_id2 FOREIGN KEY (product_id)
         REFERENCES Product (product_id);
