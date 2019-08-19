@@ -1,5 +1,3 @@
-DROP DATABASE STOREFRONT;
-
 CREATE DATABASE StoreFront;
 USE StoreFront;
 
@@ -79,3 +77,4 @@ CREATE TABLE orders(
     order_status VARCHAR(20) CHECK (order_status IN ('Shipped','Cancelled', 'Returned', 'Not Shipped'))
 );
         
+
