@@ -24,7 +24,34 @@ CREATE TABLE Shopper(
     FOREIGN KEY (email)
         REFERENCES User (email)
 );
-                            
+
+CREATE TABLE Category(
+   parent_category INT,
+   name VARCHAR(20) NOT NULL,
+   category_id INT AUTO_INCREMENT PRIMARY KEY
+);
+
+CREATE TABLE Product(
+    product_id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(30) NOT NULL,
+    quantity INT NOT NULL,
+    price DOUBLE NOT NULL,
+    image VARCHAR(20),
+    category_id INT,
+    date DATE NOT NULL,
+    FOREIGN KEY (category_id)
+        REFERENCES Category (category_id)
+);
+
+CREATE TABLE Stock(
+   product_Id INT,
+   is_in_stock BOOLEAN NOT NULL DEFAULT FALSE,
+   PRIMARY KEY (product_id),
+   CONSTRAINT Product_Id1 FOREIGN KEY (product_id)
+       REFERENCES Product (product_id)
+       ON DELETE CASCADE ON UPDATE CASCADE
+);
+
 CREATE TABLE Address(
     street VARCHAR(30) NOT NULL,
     city VARCHAR(20) NOT NULL,
@@ -36,24 +63,6 @@ CREATE TABLE Address(
     FOREIGN KEY (shopper_id)
         REFERENCES Shopper (shopper_id)
         ON DELETE CASCADE ON UPDATE CASCADE
-);
-        
-CREATE TABLE Category(
-    parent_category INT,
-    name VARCHAR(20) NOT NULL,
-    category_id INT AUTO_INCREMENT PRIMARY KEY
-);
-        
-CREATE TABLE Product(
-    product_id INT AUTO_INCREMENT PRIMARY KEY,
-    name VARCHAR(30) NOT NULL,
-    quantity INT NOT NULL,
-    price DOUBLE NOT NULL,
-    image VARCHAR(20),
-    category_id INT,
-    date DATE NOT NULL,
-    FOREIGN KEY (category_id)
-        REFERENCES Category (category_id)
 );
         
 CREATE TABLE items_ordered(
@@ -76,5 +85,7 @@ CREATE TABLE orders(
     order_date DATE,
     order_status VARCHAR(20) CHECK (order_status IN ('Shipped','Cancelled', 'Returned', 'Not Shipped'))
 );
+        
+
         
 
