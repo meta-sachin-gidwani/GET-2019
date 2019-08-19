@@ -59,6 +59,19 @@ INSERT INTO product(name, quantity, price, date,category_id,image) VALUES
     ('Peter England Suit', 15, 10000.00, '2014/02/12',3,NULL);
     
     
+INSERT INTO Stock (product_id)  
+   SELECT product_id
+     FROM Product;
+     
+UPDATE Stock
+       LEFT JOIN
+   Product ON Stock.product_id = Product.product_id 
+SET 
+   is_in_stock = TRUE
+WHERE
+   Product.quantity > 0;
+    
+    
 INSERT INTO items_ordered(product_id,product_quantity,shopper_id)  VALUES 
     (1,2,2),
     (2,1,2),
