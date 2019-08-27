@@ -25,7 +25,8 @@ function registerEmp() {
     var confirmPassword = document.getElementById("empConfirmPassword").value;
     var validPassword = /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}$/;
     if (!(password.match(validPassword))) {
-        alert("Password should contains Uppercase, Lowercase, Numeric, Alphanumeric, and length minimum 8")
+        alert("Password should contains Uppercase, Lowercase, Numeric, Alphanumeric, and length minimum 8");
+        return false;
     } else if (password != confirmPassword) {
         alert("password does not match");
         return false;
