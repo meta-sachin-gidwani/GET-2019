@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Metacube Parking Form</title>
+
+    <script src="validation.js"></script>
+</head>
+
+<body>
+    <div id="empRegistrationForm" align="center">
+        <h1>Registration For Parking</h1>
+        <input id="empName" type="text" placeholder="Full Name" size="60%" /><br><br>
+        <label><input type="radio" name="gender" />Male</label>
+        <label><input type="radio" name="gender" />Female</label><br><br>
+        <input id="empEmail" type="email" placeholder="Email" size="60%" /><br><br>
+        <input id="empPassword" type="password" placeholder="password" size="60%" /><br><br>
+        <input id="empConfirmPassword" type="password" placeholder="Confirm password" size="60%" /><br><br>
+        <input id="empNumber" type="number" placeholder="Contact Number" size="60%" /><br><br>
+        <button id="submitButton" onclick="registerEmp(empEmail.value)">submit</button>
+    </div>
+
+    <div id="addVehicleForm" align="center">
+        <form action="" method="GET">
+            <h1>Add Your Vehicle</h1>
+            <input id="name" type="text" placeholder="Name" size="60%" /><br><br>
+            <select id="typeOfVehicle">
+                <option disabled selected>--Select-Type--</option>
+                <option value="Cycle">Cycle</option>
+                <option value="MotorCycle">MotorCycle</option>
+                <option value="Four Wheelers">Four Wheelers</option>
+            </select><br><br>
+            <input id="vehicleNumber" type="text" placeholder="Vehicle Number" size="60%" /><br><br>
+            <input id="empl_Id" type="text" size="60%" placeholder="Employee Id" readonly /><br><br>
+            <textarea id="vehicleIdentification" placeholder="Identification" cols="60"></textarea><br><br>
+            <input id="addVehicleButton" type="button" value="Add" onclick="addVehicle(typeOfVehicle.value)">
+        </form>
+    </div>
+
+    <div id="passesPrice" align="center">
+        <h1>Select Plan</h1>
+        <label id="typeOfVehicleLabel"></label>
+        <table id="priceTable" border="1px">
+            <tr>
+                <th>Plan</th>
+                <th>Prices</th>
+            </tr>
+            <tr>
+                <td>Daily</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Monthly</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>Yearly</td>
+                <td></td>
+            </tr>
+        </table><br><br>
+
+        <select id="typeOfCurrency" onchange="changeCurrency()">
+            <option value="INR">INR</option>
+            <option value="USD">USD</option>
+            <option value="YEN">YEN</option>
+        </select><br><br>
+        <label><input type="radio" name="planType" value="Daily" />Daily</label>
+        <label><input type="radio" name="planType" value="Monthly" />Monthly</label>
+        <label><input type="radio" name="planType" value="Yearly" />Yearly</label><br><br>
+        <input type="button" id="getPassButton" value="Get Pass" onclick="getPass()">
+    </div>
+</body>
+
+</html>
