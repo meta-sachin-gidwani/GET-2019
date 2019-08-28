@@ -27,7 +27,7 @@ public class UpdateStudentDetailsServlet extends HttpServlet {
 				  + request.getParameter("last_name") + "'><br><br><input name='father_name' type='text' pattern='[A-Z a-z]*' value='"
 				  + request.getParameter("father_name") + "'><br><br><input name='email' type='email' value='"
 				  + request.getParameter("email") + "' readonly><br><br><input name='class' type='number' value='"
-				  + request.getParameter("class") + "'><br><br><input name='age' type='number' value='"
-				  + request.getParameter("age") + "'><br><br><input name='submitButton' type='submit' value='Update'></form></body></html>");
+				  + request.getParameter("class") + "' min='1' max='12'><br><br><input name='age' type='number' value='"
+				  + request.getParameter("age") + "' min='6' max='20'><br><br><input name='submitButton' type='submit' value='Update'></form></body></html>");
 	}
 }
