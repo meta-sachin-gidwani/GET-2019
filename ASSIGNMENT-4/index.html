@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Metacube Parking</title>
+<script src="allFunctionJs.js">
+</script>
+</head>
+<body align="center">
+	<div id="empRegistrationForm">
+		<form action="RegistrationServlet" method="post"
+			onsubmit="return validation(this)">
+			<h1>Welcome To Metacube Parking</h1>
+			<h2>Register Here</h2>
+			<table align="center" style="text-align: left" cellpadding="10">
+				<tr>
+					<td><label>Full Name</label></td>
+					<td><input name="full_name" type="text"
+						placeholder="Full Name" size="60%" pattern="[A-Z a-z]*" required></td>
+				</tr>
+				<tr>
+					<td><label>Gender</label></td>
+					<td><label> <input type="radio" name="gender"
+							value="M" required>Male
+					</label> <label> <input type="radio" name="gender" value="F">Female
+					</label></td>
+					<td>
+				</tr>
+				<tr>
+					<td><label>Email</label></td>
+					<td><input name="email" type="email" placeholder="Email"
+						size="60%" required></td>
+				</tr>
+				<tr>
+					<td><label>Password</label></td>
+					<td><input name="password" type="password"
+						placeholder="Password" size="60%"
+						pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}" required></td>
+				</tr>
+				<tr>
+					<td><label>Confirm password</label></td>
+					<td><input name="confirm_password" type="password"
+						placeholder="Confirm Password" size="60%" required></td>
+				</tr>
+				<tr>
+					<td><label>Contact Number</label></td>
+					<td><input name="contact" type="text" placeholder="Contact"
+						size="60%" pattern="([0-9]){10}" required></td>
+				</tr>
+				<tr>
+					<td><label>Organization</label></td>
+					<td><select name="organization" required>
+							<option disabled selected>Select Organization</option>
+							<option>Metacube</option>
+							<option>TCS</option>
+							<option>Infosys</option>
+							<option>Wipro</option>
+					</select></td>
+				</tr>
+
+			</table><br><br>
+
+			<input id="submitButton" name="submitButton" type="submit"
+				value="Register">
+		</form>
+		<br>
+		<h3>
+			Already A Member ? <a href="login.html">LogIn</a>
+		</h3>
+	</div>
+</body>
+</html>
