@@ -1,4 +1,3 @@
-Drop Database PARKING_SYSTEM;
 CREATE DATABASE PARKING_SYSTEM;
 USE PARKING_SYSTEM;
 CREATE TABLE EMPLOYEE(
@@ -27,5 +26,3 @@ price varchar(30),
  FOREIGN KEY (emp_Id)
         REFERENCES Employee(regi_id)
 );
- select * from employee;
-SELECT regi_id,name FROM EMPLOYEE WHERE regi_id != 2 and organization = (select organization from EMPLOYEE where regi_id = 2);
