@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <ul>
+        <li><a href="#registraionDiv"><strong>Registration</strong></a></li>
+        <li><a href="#addVehicleDiv"><strong>Add Vehicle</strong></a></li>
+        <li><a href="#feedbackDiv"><strong>Feedback</strong></a></li>
+        <li><a href="#pricingDiv"><strong>Pricing</strong></a></li>
+    </ul>
+
+    <h1 align="center">Welcome To Parking System</h1>
+
+    <div align="center">
+        <img src="C:\Users\Sachin\Downloads\parking.jpg" height="500">
+    </div>
+
+    <button class="collapsible">Employee Registration</button>
+    <div class="content" align="center" id="registraionDiv">
+        <h2>Register Here</h2>
+        <form>
+            <table style="text-align: left" cellpadding="10">
+                <tr>
+                    <td><label>Full Name</label></td>
+                    <td><input name="full_name" type="text" placeholder="Full Name" size="60%" pattern="[A-Z a-z]*" required></td>
+                </tr>
+                <tr>
+                    <td><label>Gender</label></td>
+                    <td><label> <input type="radio" name="gender" value="M" required>Male
+                        </label> <label> <input type="radio" name="gender" value="F">Female
+                        </label></td>
+                    <td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input name="email" type="email" placeholder="Email" size="60%" required></td>
+                </tr>
+                <tr>
+                    <td><label>Password</label></td>
+                    <td><input name="password" type="password" placeholder="Password" size="60%" pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}" required></td>
+                </tr>
+                <tr>
+                    <td><label>Confirm password</label></td>
+                    <td><input name="confirm_password" type="password" placeholder="Confirm Password" size="60%" required></td>
+                </tr>
+                <tr>
+                    <td><label>Contact Number</label></td>
+                    <td><input name="contact" type="text" placeholder="Contact" size="60%" pattern="([0-9]){10}" required></td>
+                </tr>
+                <tr>
+                    <td><label>Organization</label></td>
+                    <td><select name="organization" required>
+                            <option disabled selected>Select Organization</option>
+                            <option>Metacube</option>
+                            <option>TCS</option>
+                            <option>Infosys</option>
+                            <option>Wipro</option>
+                        </select></td>
+                </tr>
+            </table><br><br>
+            <input id="submitButton" name="submitButton" type="submit" value="Register">
+        </form>
+    </div>
+
+    <button class="collapsible">Add Vehicle</button>
+    <div class="content" align="center" id="addVehicleDiv">
+        <h2>Add Vehicle</h2>
+        <form>
+            <table style="text-align: left" cellpadding="10">
+                <tr>
+                    <td><label>Vehicle Name</label></td>
+                    <td><input name="vehicle_name" type="text" placeholder="Vehicle Name" size="60%" pattern="[A-Z a-z]*"></td>
+                </tr>
+                <tr>
+                    <td><label>Vehicle Type</label></td>
+                    <td><select name="typeOfVehicle">
+                            <option disabled selected>--Select-Type--</option>
+                            <option value="Cycle">Cycle</option>
+                            <option value="MotorCycle">MotorCycle</option>
+                            <option value="Four Wheelers">Four Wheelers</option>
+                        </select></td>
+                </tr>
+                <tr>
+                    <td><label>Vehicle Number</label></td>
+                    <td><input name="vehicleNumber" type="text" placeholder="Vehicle Number" size="60%"></td>
+                </tr>
+                <tr>
+                    <td><label>Employee ID</label></td>
+                    <td><input name="empl_Id" type="text" size="60%"></td>
+                </tr>
+                <tr>
+                    <td><label>Identification</label></td>
+                    <td><input name="vehicleIdentification" placeholder="Identification" size="60%" /></td>
+                </tr>
+            </table>
+            <input name="addVehicleButton" type="submit" value="Add">
+    </div>
+
+    <button class="collapsible">Feedback</button>
+    <div class="content" align="center" id="feedbackDiv">
+        <h2>Give Your Feedback</h2>
+        <form>
+            <table style="text-align: left" cellpadding="10">
+                <tr>
+                    <td><label>Name</label></td>
+                    <td><input name="name" type="text" placeholder="Name" size="60%" pattern="[A-Z a-z]*"></td>
+                </tr>
+                <tr>
+                    <td><label>Email</label></td>
+                    <td><input name="email" type="email" placeholder="Email" size="60%"></td>
+                </tr>
+                <tr>
+                    <td><label>Subject</label></td>
+                    <td><input name="subject" type="text" placeholder="Subject" size="60%"></td>
+                </tr>
+                <tr>
+                    <td><label>Message</label></td>
+                    <td><input name="message" placeholder="Message" size="60%" /></td>
+                </tr>
+            </table>
+            <input name="sendButton" type="submit" value="Send">
+        </form>
+    </div>
+
+    <button class="collapsible">Pricing Detail</button>
+    <div class="content" align="center" id="pricingDiv">
+        <h2>Pricing Detail</h2>
+        <div class="pass">
+            <h4 align="center">Cycle</h4>
+            <div class="circle">
+                <strong>$100</strong></br>
+                <span>/month</span>
+            </div>
+            </br>
+            <span>$5 Daily</span></br>
+            <span>$100 Monthly</span></br>
+            <span>$500 Yearly</span></br>
+            </br>
+            <input type="button" value="PURCHASE NOW">
+        </div>
+        <div class="pass">
+            <h4 align="center">MotorCycle</h4>
+            <div class="circle">
+                <strong>$200</strong></br>
+                <span>/month</span>
+            </div>
+            </br>
+            <span>$10 Daily</span></br>
+            <span>$200 Monthly</span></br>
+            <span>$1000 Yearly</span></br>
+            </br>
+            <input type="button" value="PURCHASE NOW">
+        </div>
+        <div class="pass">
+            <h4 align="center">Two Wheeler</h4>
+            <div class="circle">
+                <strong>$500</strong></br>
+                <span>/month</span>
+            </div>
+            </br>
+            <span>$20 Daily</span></br>
+            <span>$500 Monthly</span></br>
+            <span>$3500 Yearly</span></br>
+            </br>
+            <input type="button" value="PURCHASE NOW">
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+li {
+    display: inline-block;
+    font-size: 20px;
+    margin: 2%;
+}
+
+ul {
+    background-color: black;
+}
+
+ul a {
+    color: white;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+ul a:hover {
+    background-color: red;
+}
+
+.collapsible {
+    width: 100%;
+    text-align: left;
+    color: white;
+    background-color: rgb(12, 53, 95);
+    padding: 10px;
+    font-size: 1em;
+}
+
+.collapsible:after {
+    content: '\002B';
+    float: right;
+}
+
+.content {
+    max-height: 0;
+    overflow: hidden;
+    background-color: white;
+}
+
+.active,
+.collapsible:hover {
+    background-color: rgb(31, 31, 151);
+    cursor: pointer;
+}
+
+.active:after {
+    content: '\2796';
+}
+
+.circle {
+    border: 1px solid rgb(61, 185, 235);
+    border-radius: 50px;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+}
+
+.pass {
+    display: inline-block;
+    border: 1px solid rgb(61, 185, 235);
+    width: 30%;
+    background-color: white;
+    margin: 10px;
+}
+
+input {
+    background-color: rgb(202, 198, 198);
+    border-radius: 7px;
+    padding: 10px;
+}
+
+input[type="submit"] {
+    background-color: rgb(74, 233, 74);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+input[type="button"] {
+    background-color: rgb(41, 176, 230);
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 50px;
+}
+
+input[type="button"]:hover {
+    cursor: pointer;
+}
