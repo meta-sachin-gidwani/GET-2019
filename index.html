@@ -6,162 +6,125 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
-    <nav>
+    <nav id="navbar">
         <ul>
-            <li><a href="#registraionDiv">Registration</a></li>
+            <li><a href="#registrationDiv">Registration</a></li>
             <li><a href="#addVehicleDiv">Add Vehicle</a></li>
             <li><a href="#feedbackDiv">Feedback</a></li>
             <li><a href="#pricingDiv">Pricing</a></li>
         </ul>
     </nav>
     <h1>Welcome To Parking System</h1>
-    <div>
-        <img src="C:\Users\Sachin\Downloads\parking.jpg">
-    </div>
-    <div id="registraionDiv">
+
+    <img src="C:\Users\Sachin\Downloads\parking.jpg">
+
+    <button class="collapsible">Registration</button>
+    <div id="registrationDiv" class="content">
         <h2>Register Here</h2>
         <form>
-            <table>
-                <tr>
-                    <td><label>Full Name</label></td>
-                    <td><input name="full_name" type="text" placeholder="Full Name" pattern="[A-Z a-z]*" required></td>
-                </tr>
-                <tr>
-                    <td><label>Gender</label></td>
-                    <td><label> <input type="radio" name="gender" value="M" required>Male
-                        </label> <label> <input type="radio" name="gender" value="F">Female
-                        </label></td>
-                    <td>
-                </tr>
-                <tr>
-                    <td><label>Email</label></td>
-                    <td><input name="email" type="email" placeholder="Email" required></td>
-                </tr>
-                <tr>
-                    <td><label>Password</label></td>
-                    <td><input name="password" type="password" placeholder="Password" pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}" required></td>
-                </tr>
-                <tr>
-                    <td><label>Confirm password</label></td>
-                    <td><input name="confirm_password" type="password" placeholder="Confirm Password" required></td>
-                </tr>
-                <tr>
-                    <td><label>Contact Number</label></td>
-                    <td><input name="contact" type="text" placeholder="Contact" pattern="([0-9]){10}" required></td>
-                </tr>
-                <tr>
-                    <td><label>Organization</label></td>
-                    <td><select name="organization" required>
-                            <option disabled selected>Select Organization</option>
-                            <option>Metacube</option>
-                            <option>TCS</option>
-                            <option>Infosys</option>
-                            <option>Wipro</option>
-                        </select></td>
-                </tr>
-            </table>
+            <label>Full Name</label>
+            <input name="full_name" type="text" placeholder="Full Name" pattern="[A-Z a-z]*" required>
+            <label>Gender</label>
+            <label><span> <input type="radio" name="gender" value="M" required>Male</span></label>
+            <label><span> <input type="radio" name="gender" value="F">Female</span></label>
+            <label>Email</label>
+            <input name="email" type="email" placeholder="Email" required>
+            <label>Password</label>
+            <input name="password" type="password" placeholder="Password" pattern="(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9]).{8,}" required>
+            <label>Confirm password</label>
+            <input name="confirm_password" type="password" placeholder="Confirm Password" required>
+            <label>Contact Number</label>
+            <input name="contact" type="text" placeholder="Contact" pattern="([0-9]){10}" required>
+            <label>Organization</label>
+            <select name="organization" required>
+                <option disabled selected>Select Organization</option>
+                 <option>Metacube</option>
+                <option>TCS</option>
+                <option>Infosys</option>
+                <option>Wipro</option>
+            </select>
             <input type="submit" value="Register">
         </form>
     </div>
 
-    <div id="addVehicleDiv">
+    <button class="collapsible">Add Vehicle</button>
+    <div id="addVehicleDiv" class="content">
         <h2>Add Vehicle</h2>
         <form>
-            <table>
-                <tr>
-                    <td><label>Vehicle Name</label></td>
-                    <td><input name="vehicle_name" type="text" placeholder="Vehicle Name" pattern="[A-Z a-z]*" required></td>
-                </tr>
-                <tr>
-                    <td><label>Vehicle Type</label></td>
-                    <td><select name="typeOfVehicle">
-                            <option disabled selected>--Select-Type--</option>
-                            <option value="Cycle">Cycle</option>
-                            <option value="MotorCycle">MotorCycle</option>
-                            <option value="Four Wheelers">Four Wheelers</option>
-                        </select></td>
-                </tr>
-                <tr>
-                    <td><label>Vehicle Number</label></td>
-                    <td><input name="vehicleNumber" type="text" placeholder="Vehicle Number" required></td>
-                </tr>
-                <tr>
-                    <td><label>Employee ID</label></td>
-                    <td><input name="empl_Id" type="text"></td>
-                </tr>
-                <tr>
-                    <td><label>Identification</label></td>
-                    <td><input name="vehicleIdentification" placeholder="Identification">
-                    </td>
-                </tr>
-            </table>
+            <label>Vehicle Name</label>
+            <input name="vehicle_name" type="text" placeholder="Vehicle Name" pattern="[A-Z a-z]*" required>
+            <label>Vehicle Type</label>
+            <select name="typeOfVehicle">
+                <option disabled selected>--Select-Type--</option>
+                <option value="Cycle">Cycle</option>
+                <option value="MotorCycle">MotorCycle</option>
+                <option value="Four Wheelers">Four Wheelers</option>
+            </select>
+            <label>Vehicle Number</label>
+            <input name="vehicleNumber" type="text" placeholder="Vehicle Number" required>
+            <label>Employee ID</label>
+            <input name="empl_Id" type="text" placeholder="Employee ID">
+            <label>Identification</label>
+            <input name="vehicleIdentification" type="text" placeholder="Identification">
             <input type="submit" value="Add">
     </div>
 
-    <div id="feedbackDiv">
+    <button class="collapsible">Feedback</button>
+    <div id="feedbackDiv" class="content">
         <h2>Give Your Feedback</h2>
         <form>
-            <table>
-                <tr>
-                    <td><label>Name</label></td>
-                    <td><input name="date" type="date" placeholder="Date" pattern="[A-Z a-z]*" required></td>
-                </tr>
-                <tr>
-                    <td><label>Email</label></td>
-                    <td><input name="email" type="email" placeholder="Email" required></td>
-                </tr>
-                <tr>
-                    <td><label>Subject</label></td>
-                    <td><input name="subject" type="text" placeholder="Subject"></td>
-                </tr>
-                <tr>
-                    <td><label>Message</label></td>
-                    <td><input name="message" placeholder="Message" required></td>
-                </tr>
-            </table>
+            <label>Date</label>
+            <input name="date" type="date" placeholder="Date" pattern="[A-Z a-z]*" required>
+            <label>Email</label>
+            <input name="email" type="email" placeholder="Email" required>
+            <label>Subject</label>
+            <input name="subject" type="text" placeholder="Subject">
+            <label>Message</label>
+            <input name="message" type="text" placeholder="Message" required>
             <input type="submit" value="Send">
         </form>
     </div>
 
-    <div id="pricingDiv">
+    <button class="collapsible">Pricing Detail</button>
+    <div id="pricingDiv" class="content">
         <h2>Pricing Detail</h2>
-        <div id="cyclePassDiv">
+        <div>
             <strong> Cycle </strong>
-            <div id="cyclePassPriceDiv">
-                <strong> $100 </strong>
-                <span> /month </span>
+            <div>
+                <strong> $100 </strong> /month
             </div>
-            <span> $5 Daily </span>
-            <span> $100 Monthly </span>
-            <span> $500 Yearly </span>
-            <input type="button" value="PURCHASE NOW">
+            <p> $5 Daily </span>
+                <span> $100 Monthly </span>
+                <span> $500 Yearly </span>
+                <input type="button" value="PURCHASE NOW">
         </div>
-        <div id="motorCyclePassDiv">
+        <div>
             <strong> MotorCycle </strong>
-            <div id="motorCyclePassPriceDiv">
-                <strong> $200 </strong>
-                <span> /month </span>
+            <div>
+                <strong> $100 </strong> /month
             </div>
-            <span> $10 Daily </span>
-            <span> $200 Monthly </span>
-            <span> $1000 Yearly </span>
-            <input type="button" value="PURCHASE NOW">
+            <p> $10 Daily </span>
+                <span> $200 Monthly </span>
+                <span> $1000 Yearly </span>
+                <input type="button" value="PURCHASE NOW">
         </div>
-        <div id="twoWheelerDiv">
+        <div>
             <strong> Two Wheeler </strong>
-            <div id="twoWheelerPriceDiv">
-                <strong> $500 </strong>
-                <span> /month </span>
+            <div>
+                <strong> $100 </strong> /month
             </div>
-            <span> $20 Daily </span>
-            <span> $500 Monthly </span>
-            <span> $3500 Yearly </span>
-            <input type="button" value="PURCHASE NOW">
+            <p> $20 Daily </span>
+                <span> $500 Monthly </span>
+                <span> $3500 Yearly </span>
+                <input type="button" value="PURCHASE NOW">
         </div>
     </div>
+
+    <script src="script.js"></script>
 </body>
 
 </html>
