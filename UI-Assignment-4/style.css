@@ -291,3 +291,18 @@ footer span {
 #img3 {
     transform: scale(1.2)translateX(-550px);
 }
+
+.backgroundText,
+.backgroundText-left {
+    transform: rotate(90deg);
+    color: rgb(221, 221, 221);
+    position: absolute;
+    font-size: 200px;
+    margin-left: -120px;
+    margin-top: 150px;
+    z-index: -1;
+}
+
+.backgroundText-left {
+    margin-left: 560px;
+}
