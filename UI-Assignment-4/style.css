@@ -1,0 +1,293 @@
+body {
+    margin: 0;
+    overflow-x: hidden;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    background-image: url("images/bodybg.png");
+}
+
+#homeSection {
+    background-image: url("images/homebg.png");
+    height: 1000px;
+    background-repeat: no-repeat;
+}
+
+li,
+li>a {
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+    background-color: #648CFF;
+}
+
+#menu {
+    flex-basis: 500px;
+}
+
+#contact {
+    flex-basis: 100px;
+}
+
+ul {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 0px;
+}
+
+h1 {
+    color: white;
+    font-size: 70px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+#homeDiv {
+    display: flex;
+    justify-content: space-around;
+}
+
+#homeChildDiv {
+    width: 600px;
+    margin-top: 50px;
+    margin-left: 170px;
+}
+
+#homeChild2Div {
+    margin-top: 100px;
+    margin-right: 100px;
+}
+
+#download {
+    display: inline-block;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    background-color: rgb(235, 99, 50);
+    margin-left: 10px;
+    border-radius: 4px;
+    width: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+#feature {
+    display: inline-block;
+    color: white;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    font-weight: bold;
+    background-color: rgb(65, 65, 241);
+    margin-left: 10px;
+    border-radius: 4px;
+    width: 100px;
+    padding: 20px;
+    text-align: center;
+}
+
+h2 {
+    text-align: center;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 35px;
+    color: rgb(92, 124, 230);
+}
+
+.subHead {
+    display: block;
+    text-align: center;
+    color: rgb(146, 134, 134);
+    font-size: 14px;
+    margin-top: -25px;
+    font-weight: lighter;
+    margin-bottom: 50px;
+}
+
+#featureSection {
+    margin-top: 50px;
+}
+
+#featureSection section span {
+    font: 30px bold black;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin-top: 16px;
+    display: block;
+}
+
+#featureSection section div i {
+    color: rgb(230, 139, 106);
+    font-size: 3.5em;
+}
+
+#featureSection section {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 100px;
+}
+
+#featureSection section>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#featureSection section div>div {
+    margin-top: -20px;
+    margin-left: 20px;
+    width: 300px;
+}
+
+.screenshotSpan {
+    font-size: 20px;
+    font-weight: bolder;
+    color: rgb(46, 43, 43);
+}
+
+#screenshots p {
+    display: block;
+    color: rgb(146, 134, 134);
+    font-size: 14px;
+    font-weight: lighter;
+}
+
+#screenshots>div {
+    display: flex;
+    justify-content: space-evenly;
+    margin-top: 130px;
+}
+
+.screenshotDescription {
+    width: 400px;
+    margin-top: 100px;
+    margin-left: -200px;
+}
+
+.screenshotDescription2 {
+    width: 400px;
+    margin-top: 100px;
+    margin-left: 130px;
+}
+
+#reviewSection div div i {
+    color: rgb(92, 124, 230);
+}
+
+#reviewSection>div {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#reviewSection div p {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: rgb(63, 59, 59);
+    margin-bottom: 6px;
+}
+
+#reviewSection div span {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    margin-top: -30px;
+}
+
+#reviewSection div div {
+    flex-basis: 500px;
+    margin-bottom: 30px;
+}
+
+#reviewSection {
+    margin-top: 130px;
+}
+
+#reviewSection>h5 {
+    margin-bottom: 100px;
+}
+
+.fa-quote-right {
+    float: right;
+}
+
+#reviewSection div>h5 {
+    margin-top: 0px;
+}
+
+#reviewSection div div>h6 {
+    color: black;
+    font-size: 12px;
+    margin-top: -30px;
+    font-weight: lighter;
+}
+
+#downloadSection {
+    display: flex;
+    margin-top: 80px;
+    background-image: url("images/downloadbg.png");
+    padding: 100px 200px 0 200px;
+}
+
+#downloadSection h2 {
+    color: white;
+    text-align: left;
+}
+
+#downloadSection div {
+    flex: 1;
+}
+
+#downloadSection div p {
+    padding-right: 85px;
+    color: white;
+    text-align: left;
+    font-weight: 600;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.5;
+    margin-bottom: 20px;
+}
+
+footer {
+    background-color: #383A53;
+}
+
+footer section {
+    display: flex;
+    justify-content: space-evenly;
+    padding: 30px;
+}
+
+footer span {
+    display: block;
+    border-top: 1px solid rgb(146, 134, 134);
+    text-align: center;
+    color: rgb(146, 134, 134);
+    font-size: 14px;
+    width: 50%;
+    font-weight: lighter;
+    padding: 40px;
+    margin-left: 340px;
+}
+
+#featureSection>div {
+    display: flex;
+    margin: 200px auto;
+}
+
+#img1 {
+    transform: skew(0deg, 3deg)scale(0.7)translateX(150px);
+}
+
+#img2 {
+    transform: skew(0deg, 3deg)translateX(50px);
+}
+
+#img5 {
+    transform: skew(0deg, -3deg)scale(0.7)translateX(700px);
+}
+
+#img4 {
+    transform: skew(0deg, -3deg)translateX(-50px);
+}
+
+#img3 {
+    transform: scale(1.2)translateX(-550px);
+}
