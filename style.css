@@ -1,0 +1,150 @@
+body {
+    margin: 0;
+}
+
+#navbar {
+    background-color: rgb(41, 169, 219);
+    margin-top: -15px;
+}
+
+li {
+    display: inline-block;
+    font-size: 20px;
+    margin: 10px;
+}
+
+#navbar ul li>a {
+    color: white;
+    text-decoration: none;
+    padding: 5px;
+}
+
+#navbar ul li>a:hover {
+    background-color: rgb(25, 150, 199);
+}
+
+h1,
+h2 {
+    text-align: center;
+}
+
+img {
+    display: block;
+    width: 500px;
+    margin: auto;
+}
+
+.content {
+    display: block;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+    padding: 0 18px;
+    max-height: 0;
+    overflow: hidden;
+    background-color: #f1f1f1;
+}
+
+input[type=text],
+input[type=email],
+input[type=password],
+input[type=date],
+select {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+input[type=submit],
+input[type=button] {
+    display: block;
+    width: 150px;
+    background-color: rgb(61, 162, 202);
+    color: white;
+    padding: 14px 20px;
+    margin: 15px auto;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+input[type=submit]:hover,
+input[type=button]:hover {
+    background-color: rgb(39, 110, 138);
+}
+
+label {
+    display: block;
+}
+
+#registrationDiv span {
+    margin-left: 100px;
+}
+
+#pricingDiv>div {
+    display: inline-block;
+    width: 30%;
+    border: 1px solid skyblue;
+    margin-top: 40px;
+    text-align: center;
+}
+
+#pricingDiv div>div {
+    display: block;
+    border: 1px solid rgb(61, 185, 235);
+    border-radius: 50px;
+    background-color: white;
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    margin: 20px auto;
+    text-align: center;
+}
+
+#pricingDiv span {
+    display: block;
+    margin: auto;
+}
+
+strong {
+    display: block;
+    margin-top: 10px;
+}
+
+.collapsible {
+    background-color: rgb(24, 135, 179);
+    color: white;
+    cursor: pointer;
+    padding: 15px;
+    width: 100%;
+    border: none;
+    text-align: left;
+    outline: none;
+    font-size: 18px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    margin: 5px;
+}
+
+.collapsible:after {
+    content: '\002B';
+    float: right;
+}
+
+.active,
+.collapsible:hover {
+    background-color: rgb(25, 116, 151);
+}
+
+.active:after {
+    content: '\2796';
+}
+
+.sticky {
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
