@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta id="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Parking System</title>
+    <script src="https://kit.fontawesome.com/411740ddde.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css?family=Alegreya&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+    <div id="outer-div" class="container">
+        <h1 id="welcome-heading"></h1>
+        <label id="label"> Please enter your full name </label>
+        <div class="container">
+            <input id="full_name" type="text" class="form-control" placeholder="Full Name" autofocus>
+            <div id="gender-div">
+                <label><input id="male" type="radio" name="gender" value="M" required>Male</label>
+                <label><input id="female" type="radio" name="gender" value="F">Female</label>
+            </div>
+            <input id="email" type="email" class="form-control" placeholder="Email">
+            <input id="password" type="password" class="form-control" placeholder="Password">
+            <input id="confirm_password" type="password" class="form-control" placeholder="Confirm Password">
+            <input id="contact" type="text" class="form-control" placeholder="Contact">
+            <select id="organization" class="form-control">
+                <option disabled selected>--Select Organization--</option>
+                <option>Metacube</option>
+                <option>TCS</option>
+                <option>Infosys</option>
+                <option>Wipro</option>
+            </select>
+            <i id="submit-organization" class="fas fa-arrow-circle-right"></i>
+        </div>
+
+        <div class="container">
+            <input id="vehicle_name" type="text" class="form-control" placeholder="Vehicle Name">
+            <select id="typeOfVehicle" class="form-control">
+                    <option disabled selected>--Select-Type--</option>
+                    <option value="Cycle">Cycle</option>
+                    <option value="MotorCycle">MotorCycle</option>
+                    <option value="Four Wheelers">Four Wheelers</option>
+            </select>
+            <i id="submit-vehicleType" class="fas fa-arrow-circle-right"></i>
+            <input id="vehicleNumber" class="form-control" type="text" placeholder="Vehicle Number">
+            <input id="vehicleIdentification" class="form-control" type="text" placeholder="Identification">
+        </div>
+
+        <div class="container">
+            <input id="currency_type" type="text" class="form-control" placeholder="Vehicle Name">
+            <select id="typeOfVehicle" class="form-control">
+                        <option disabled selected>--Select-Type--</option>
+                        <option value="Cycle">Cycle</option>
+                        <option value="MotorCycle">MotorCycle</option>
+                        <option value="Four Wheelers">Four Wheelers</option>
+                </select>
+            <i id="submit-vehicleType" class="fas fa-arrow-circle-right"></i>
+            <input id="vehicleNumber" class="form-control" type="text" placeholder="Vehicle Number">
+            <input id="vehicleIdentification" class="form-control" type="text" placeholder="Identification">
+        </div>
+
+        <div id="pricingDiv" class="container">
+            <div>
+                <span class="vehicleType">  </span>
+                <div class="circle">
+                    <strong>  </strong>
+                    <span> /day </span>
+                </div>
+                <button id="btn1" class="purchase-btn"> PURCHASE NOW </button>
+            </div>
+            <div>
+                <span class="vehicleType">  </span>
+                <div class="circle">
+                    <strong>  </strong>
+                    <span>/month</span>
+                </div>
+                <button id="btn2" class="purchase-btn"> PURCHASE NOW </button>
+            </div>
+            <div>
+                <span class="vehicleType">  </span>
+                <div class="circle">
+                    <strong>  </strong>
+                    <span>/year</span>
+                </div>
+                <button id="btn3" class="purchase-btn"> PURCHASE NOW </button>
+            </div>
+        </div>
+
+    </div>
+    <script src="script.js"></script>
+</body>
+
+</html>
